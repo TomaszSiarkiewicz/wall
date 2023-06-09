@@ -26,7 +26,7 @@ public class Wall implements Structure {
         for (Block block : blocks) {
             if (color.equals(block.getColor())) return Optional.of(block);
             if (block instanceof CompositeBlock composite) {
-                findByMaterialSupport(composite.getBlocks(), color);
+                findByColorSupport(color, composite.getBlocks());
             }
         }
         return Optional.empty();
